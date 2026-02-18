@@ -18,6 +18,11 @@ bash ./bin/setup.sh
 bash ./bin/setup.sh --run --host 127.0.0.1 --port 8000
 ```
 
+EXPERIMENTAL geometric inference mode (optional):
+
+- Disabled by default.
+- Enable by setting `AUTORIG_ENABLE_GEOMETRIC_AUTORIG=1` in the API server environment.
+
 ## 4. Open browser UI
 
 - Swagger UI: `http://127.0.0.1:8000/docs`

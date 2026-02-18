@@ -34,6 +34,22 @@ Then visit:
 - `docs/BLENDER_INSTALL.md`
 - `docs/VERIFY_CHECKSUMS.md`
 
+## Experimental Features
+
+### Geometric Inference Mode (Optional / EXPERIMENTAL)
+
+This release includes an optional **EXPERIMENTAL** "Draw -> Recognize -> Correct" mode that infers a skeleton from
+user guide strokes/lines, then runs the standard correction + export pipeline.
+
+Enablement (disabled by default):
+
+- API server: set `AUTORIG_ENABLE_GEOMETRIC_AUTORIG=1`
+- Client request: `rig_mode=geometric_inference` (Web/Blender UI labels this as EXPERIMENTAL)
+
+Compatibility:
+
+- When disabled, behavior is identical to the default ML mode.
+
 ## Support
 
 - Email: `support@astroclub.space`
