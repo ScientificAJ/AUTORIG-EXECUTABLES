@@ -1,0 +1,13 @@
+{
+  "product": "AutoRig",
+  "built_at_utc": "2026-02-18T05:30:29Z",
+  "source_repo": "https://github.com/ScientificAJ/AutoRig",
+  "source_commit": "afb5b01044bff6dc719fd9245111432ef4042023",
+  "source_commit_short": "afb5b01044bf",
+  "artifacts": [
+    {"path": "bin/autorig_cli-linux-x86_64", "sha256": "45a8e1dd276db514b1eb72b1a22e9375a21ff4150c9669c446befb8098197617"},
+    {"path": "bin/setup.sh", "sha256": "3f4b82e61f09bbce583ed9c9ad46861d3fb4eab019b7d5522ac4bd86ad9cf7bd"},
+    {"path": "plugins/autorig_blender-0.1.0.zip", "sha256": "dc0db248ab1974e5adc861ab5e4c53c36f82f3dbbaa65e0ae4069e97bb73b694"},
+    {"path": "proposal/autorig_enterprise_proposal.pdf", "sha256": "562be5bd3cc3323f30292b345409d471d54caa6c859e5a20e6294f38cde856b2"}
+  ]
+}

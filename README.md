@@ -1,61 +1,78 @@
-# AutoRig Distribution
+# AutoRig Artifacts
 
-Professional distribution repository for AutoRig executable artifacts.
+Prebuilt AutoRig artifacts intended for end users and integrators.
 
-## Repository Layout
+Source code and developer documentation live in:
 
-- `bin/autorig_cli-linux-x86_64` - Linux CLI binary
-- `bin/setup.sh` - setup helper script
-- `plugins/autorig_blender-0.1.0.zip` - Blender add-on package
-- `proposal/autorig_enterprise_proposal.pdf` - business proposal deck
-- `docs/` - usage, verification, and installation guides
-- `SHA256SUMS` - integrity hashes for distributed artifacts
+- `https://github.com/ScientificAJ/AutoRig`
 
-## Quick Start
+## What’s Included
+
+| Path | Description |
+|------|-------------|
+| `bin/autorig_cli-linux-x86_64` | Linux (x86_64) CLI binary (runs locally, no Python install required). |
+| `bin/setup.sh` | Helper to start the local API server and (optionally) open the EXPERIMENTAL drawing UI. |
+| `plugins/autorig_blender-0.1.0.zip` | Blender add-on zip (install in Blender Preferences). |
+| `proposal/autorig_enterprise_proposal.pdf` | Proposal / deck PDF. |
+| `BUILD_INFO.json` | Build provenance (source commit + artifact hashes). |
+| `SHA256SUMS` | Integrity hashes for distributed artifacts. |
+| `docs/` | Quickstart, Blender install, checksum verification. |
+
+## Verify Integrity (Recommended)
 
 ```bash
-bash ./bin/setup.sh
+sha256sum -c SHA256SUMS
 ```
 
-Run API server:
+## Quickstart: Local API Server
 
 ```bash
 bash ./bin/setup.sh --host 127.0.0.1 --port 8000
 ```
 
-Then visit:
+Then open:
 
 - `http://127.0.0.1:8000/docs`
 - `http://127.0.0.1:8000/healthz`
 
-EXPERIMENTAL geometric inference drawing UI:
+## Quickstart: CLI (Local Rig Export)
+
+OBJ input is supported out-of-the-box:
+
+```bash
+./bin/autorig_cli-linux-x86_64 validate \
+  --mesh model.obj --target blender --out output/model.rig.json
+```
+
+Notes:
+
+- `.fbx/.glb` loading requires `trimesh` and is supported when running from source (not guaranteed in this binary).
+
+## EXPERIMENTAL: Geometric Inference (Draw -> Recognize -> Correct)
+
+Launch the EXPERIMENTAL drawing UI:
 
 ```bash
 bash ./bin/setup.sh --geometric
 ```
+
+This opens:
+
+- `/experimental/geometric` (**EXPERIMENTAL**)
+
+Compatibility guarantee:
+
+- When EXPERIMENTAL mode is disabled (default), behavior is identical to the default ML mode.
+
+## Blender Add-on
+
+See `docs/BLENDER_INSTALL.md`.
 
 ## Documentation
 
 - `docs/QUICKSTART.md`
 - `docs/BLENDER_INSTALL.md`
 - `docs/VERIFY_CHECKSUMS.md`
-
-## Experimental Features
-
-### Geometric Inference Mode (Optional / EXPERIMENTAL)
-
-This release includes an optional **EXPERIMENTAL** "Draw -> Recognize -> Correct" mode that infers a skeleton from
-user guide strokes/lines, then runs the standard correction + export pipeline.
-
-Enablement (disabled by default):
-
-- API server: set `AUTORIG_ENABLE_GEOMETRIC_AUTORIG=1`
-- Client request: `rig_mode=geometric_inference` (Web/Blender UI labels this as EXPERIMENTAL)
-- Drawing UI: `bash ./bin/setup.sh --geometric` (opens `/experimental/geometric`)
-
-Compatibility:
-
-- When disabled, behavior is identical to the default ML mode.
 
 ## Support
 

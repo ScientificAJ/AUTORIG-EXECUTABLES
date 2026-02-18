@@ -15,6 +15,7 @@
 ## Notes
 
 - This plugin package is Blender-standard and contains Python add-on code inside the zip.
+- The add-on talks to the local AutoRig API server. Start it from this repo with `bash ./bin/setup.sh`.
 
 ## EXPERIMENTAL: Geometric Inference Mode (Optional)
 
@@ -24,6 +25,7 @@ to infer a skeleton before running the standard correction/export pipeline.
 Requirements:
 
 - The AutoRig API server must be started with `AUTORIG_ENABLE_GEOMETRIC_AUTORIG=1`.
+- Quickstart (server with EXPERIMENTAL enabled, no browser auto-open): `bash ./bin/setup.sh --geometric --no-open`
 
 Enable in Blender:
 
