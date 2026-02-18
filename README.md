@@ -17,16 +17,22 @@ Professional distribution repository for AutoRig executable artifacts.
 bash ./bin/setup.sh
 ```
 
-Run API server and open the web interface:
+Run API server:
 
 ```bash
-bash ./bin/setup.sh --run --host 127.0.0.1 --port 8000
+bash ./bin/setup.sh --host 127.0.0.1 --port 8000
 ```
 
 Then visit:
 
 - `http://127.0.0.1:8000/docs`
 - `http://127.0.0.1:8000/healthz`
+
+EXPERIMENTAL geometric inference drawing UI:
+
+```bash
+bash ./bin/setup.sh --geometric
+```
 
 ## Documentation
 
@@ -45,6 +51,7 @@ Enablement (disabled by default):
 
 - API server: set `AUTORIG_ENABLE_GEOMETRIC_AUTORIG=1`
 - Client request: `rig_mode=geometric_inference` (Web/Blender UI labels this as EXPERIMENTAL)
+- Drawing UI: `bash ./bin/setup.sh --geometric` (opens `/experimental/geometric`)
 
 Compatibility:
 

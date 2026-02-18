@@ -15,13 +15,19 @@ bash ./bin/setup.sh
 ## 3. Start API service
 
 ```bash
-bash ./bin/setup.sh --run --host 127.0.0.1 --port 8000
+bash ./bin/setup.sh --host 127.0.0.1 --port 8000
 ```
 
 EXPERIMENTAL geometric inference mode (optional):
 
 - Disabled by default.
 - Enable by setting `AUTORIG_ENABLE_GEOMETRIC_AUTORIG=1` in the API server environment.
+
+EXPERIMENTAL drawing UI (opens a browser window):
+
+```bash
+bash ./bin/setup.sh --geometric
+```
 
 ## 4. Open browser UI
 
