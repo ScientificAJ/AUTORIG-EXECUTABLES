@@ -1,36 +1,26 @@
 # AutoRig Executables
 
-Rebuilt artifacts for AutoRig `0.2.1`.
+Rebuilt artifacts for AutoRig `0.2.2`.
 
 ## Included Artifacts
 
 - `bin/autorig_cli-linux-x86_64`
-- `plugins/autorig_blender-0.2.1.zip`
+- `plugins/autorig_blender-0.2.2.zip`
 - `setup.sh`
 - `SHA256SUMS`
 - `RELEASE_METADATA.json`
 
 ## What’s New In This Build
 
-- Large-scale contact pose library (index-first, lazy-loaded, schema-versioned)
-- Contact constraints:
-  - hand-in-pocket (marker-first with inferred fallback)
-  - hand-on-hip
-  - foot planted
-  - cross-leg contact
-  - knee-to-ground contact
-- Deterministic pose solve pipeline with fallback chain:
-  - requested pose -> nearest safe pose -> neutral safe fallback
-- New CLI pose controls:
-  - `--pose`
-  - `--pose-side`
-  - `--pose-intensity`
-  - `--pose-damping`
-  - `--pose-falloff`
-  - `--pose-param`
-  - `--pose-stack`
-  - `--pose-batch-preload`
-  - `--pose-mode`
+- Pocket anchor marker contract:
+  - `options.pose_request.params.pocket_anchor_markers.<side> = {center, half_extents}`
+  - strict API validation rejects NaN/Inf, malformed vectors, and non-positive extents
+- Mandatory pocket-anchor confirmation gate for `contact_v2 + hand_in_pocket`:
+  - Web: click-to-place anchor center + extents editor + confirmation dialog
+  - Blender: run-time confirmation dialog with side/center/extents/preview summary
+  - run stays blocked until explicit confirmation
+- Deterministic marker fallback preserved:
+  - if no marker is provided, inferred pocket anchor fallback is still used
 
 ## Quick Start
 

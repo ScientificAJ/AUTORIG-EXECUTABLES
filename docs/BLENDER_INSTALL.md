@@ -2,20 +2,29 @@
 
 ## Artifact
 
-- `plugins/autorig_blender-0.2.1.zip`
+- `plugins/autorig_blender-0.2.2.zip`
 
 ## Install Steps
 
 1. Open Blender.
 2. Go to `Edit -> Preferences -> Add-ons`.
 3. Click `Install...`.
-4. Select `plugins/autorig_blender-0.2.1.zip`.
+4. Select `plugins/autorig_blender-0.2.2.zip`.
 5. Enable the `AutoRig AI` add-on.
 
 ## Notes
 
 - This plugin package is Blender-standard and contains Python add-on code inside the zip.
 - The add-on talks to the local AutoRig API server. Start it from this repo with `bash ./bin/setup.sh`.
+
+## Pocket Anchor Confirmation (Contact Pose)
+
+For `contact_v2` pocket poses (`hand_in_pocket*`), run is blocked until the anchor is confirmed:
+
+1. Set `Pose Mode` and `Contact Pose ID` in add-on preferences.
+2. Configure pocket anchor side/center/half extents.
+3. Click run; a confirmation dialog shows side, center, half extents, and preview state.
+4. Confirm to continue; cancel to reposition.
 
 ## EXPERIMENTAL: Geometric Inference Mode (Optional)
 
