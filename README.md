@@ -5,7 +5,7 @@ Prebuilt AutoRig artifacts intended for end users and integrators.
 Build:
 
 - Version: `0.2.1`
-- Build date (UTC): `2026-02-19` (film-extension refresh)
+- Build date (UTC): `2026-02-19` (facial-mode hardening refresh)
 
 Source code and developer documentation live in:
 
@@ -106,7 +106,28 @@ Enable the optional facial plugin:
 ```bash
 ./bin/autorig_cli-linux-x86_64 validate \
   --mesh model.obj --target blender --out output/model.rig.json \
-  --film-extension --film-facial-plugin
+  --film-extension --film-facial-plugin --film-facial-mode auto
+```
+
+Facial placement modes:
+
+- `offset`: legacy fixed local offsets
+- `surface_project`: offset + nearest-face surface projection + symmetry/depth clamps
+- `landmark`: canvas-based landmark fit
+- `auto`: tries `landmark -> surface_project -> offset`
+
+Quality gating:
+
+- low-confidence placements are skipped instead of writing bad facial joints
+- debug attempt details are emitted in `metadata.extensions.film.facial_plugin.debug`
+
+Calibration overrides:
+
+```bash
+./bin/autorig_cli-linux-x86_64 validate \
+  --mesh model.obj --target blender --out output/model.rig.json \
+  --film-extension --film-facial-plugin --film-facial-mode landmark \
+  --film-facial-calibration '{"offset_scale_x":1.05,"face_width_multiplier":1.1}'
 ```
 
 ## EXPERIMENTAL: Geometric Inference (Draw -> Recognize -> Correct)

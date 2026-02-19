@@ -101,5 +101,22 @@ Enable the optional facial plugin:
 ```bash
 ./bin/autorig_cli-linux-x86_64 validate \
   --mesh model.obj --target blender --out output/model.rig.json \
-  --film-extension --film-facial-plugin
+  --film-extension --film-facial-plugin --film-facial-mode auto
+```
+
+Facial placement modes:
+
+- `offset`
+- `surface_project`
+- `landmark`
+- `auto` (`landmark -> surface_project -> offset`)
+
+Optional calibration override:
+
+```bash
+./bin/autorig_cli-linux-x86_64 validate \
+  --mesh model.obj --target blender --out output/model.rig.json \
+  --film-extension --film-facial-plugin \
+  --film-facial-mode landmark \
+  --film-facial-calibration '{"offset_scale_x":1.05}'
 ```

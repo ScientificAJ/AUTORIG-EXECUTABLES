@@ -64,3 +64,5 @@ Enable in Blender:
 2. Find `AutoRig AI`.
 3. Under **Experimental**, enable `Enable EXPERIMENTAL Film Extension`.
 4. Optionally enable `Enable EXPERIMENTAL Film Facial Plugin`.
+5. Choose `Film Facial Mode` (`auto|landmark|surface_project|offset`).
+6. Optional: set `Film Facial Calibration JSON` for per-character overrides.
