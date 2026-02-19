@@ -85,3 +85,21 @@ Run with experimental helper rigs enabled:
   --experimental-hair-rigging --experimental-cloth-assist \
   --preset Wind_001 --intensity 0.5 --vector "0,1,0"
 ```
+
+## 7) EXPERIMENTAL: Film Extension (Optional)
+
+Enable film-ready helper joints:
+
+```bash
+./bin/autorig_cli-linux-x86_64 validate \
+  --mesh model.obj --target blender --out output/model.rig.json \
+  --film-extension
+```
+
+Enable the optional facial plugin:
+
+```bash
+./bin/autorig_cli-linux-x86_64 validate \
+  --mesh model.obj --target blender --out output/model.rig.json \
+  --film-extension --film-facial-plugin
+```

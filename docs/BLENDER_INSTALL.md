@@ -47,3 +47,20 @@ Enable in Blender:
 2. Find `AutoRig AI`.
 3. Under **Experimental**, enable `Enable EXPERIMENTAL Hair Rigging` and/or `Enable EXPERIMENTAL Cloth Assist`.
 4. Optionally set a motion preset ID (e.g. `Wind_001`) and tweak direction/intensity/frequency/damping.
+
+## EXPERIMENTAL: Film Extension + Facial Plugin (Optional)
+
+This add-on also includes a disabled-by-default film extension layer:
+
+- `film_spine_mid_*`
+- `film_twist_*`
+- `film_scapula_*`
+- `film_metacarpal_*`
+- optional `film_face_*`
+
+Enable in Blender:
+
+1. Open `Edit -> Preferences -> Add-ons`.
+2. Find `AutoRig AI`.
+3. Under **Experimental**, enable `Enable EXPERIMENTAL Film Extension`.
+4. Optionally enable `Enable EXPERIMENTAL Film Facial Plugin`.

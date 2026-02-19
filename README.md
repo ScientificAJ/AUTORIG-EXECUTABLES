@@ -5,7 +5,7 @@ Prebuilt AutoRig artifacts intended for end users and integrators.
 Build:
 
 - Version: `0.2.1`
-- Build date (UTC): `2026-02-19`
+- Build date (UTC): `2026-02-19` (film-extension refresh)
 
 Source code and developer documentation live in:
 
@@ -81,6 +81,32 @@ Run with experimental helpers enabled:
   --mesh model.obj --target blender --out output/model.rig.json \
   --experimental-hair-rigging --experimental-cloth-assist \
   --preset Wind_001 --intensity 0.5 --vector "0,1,0"
+```
+
+## EXPERIMENTAL: Film-Ready Skeleton Extension
+
+This release adds a modular film extension layer (disabled by default) with:
+
+- spine segmentation helpers: `film_spine_mid_*`
+- two twist helpers per major limb segment: `film_twist_*`
+- shoulder helpers: `film_scapula_*`
+- hand helpers: `film_metacarpal_*`
+- optional detachable facial helpers: `film_face_*`
+
+Run with film extension:
+
+```bash
+./bin/autorig_cli-linux-x86_64 validate \
+  --mesh model.obj --target blender --out output/model.rig.json \
+  --film-extension
+```
+
+Enable the optional facial plugin:
+
+```bash
+./bin/autorig_cli-linux-x86_64 validate \
+  --mesh model.obj --target blender --out output/model.rig.json \
+  --film-extension --film-facial-plugin
 ```
 
 ## EXPERIMENTAL: Geometric Inference (Draw -> Recognize -> Correct)
