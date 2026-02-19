@@ -2,7 +2,7 @@
   "version": "0.2.3",
   "build_date": "2026-02-19",
   "source_repo": "https://github.com/ScientificAJ/AutoRig",
-  "source_commit": "4328dd7",
+  "source_commit": "d67043d",
   "features": [
     "film_facial_eyelid_color_contract",
     "api_validation_autorig_eyelid_color_invalid",

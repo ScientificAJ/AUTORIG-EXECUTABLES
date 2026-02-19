@@ -2,8 +2,8 @@
   "product": "AutoRig",
   "built_at_utc": "2026-02-19T16:51:32Z",
   "source_repo": "https://github.com/ScientificAJ/AutoRig",
-  "source_commit": "4328dd71d889ec9b07bd6cc1dc105e63c0f51596",
-  "source_commit_short": "4328dd7",
+  "source_commit": "d67043d015303e57461edabb5773a443e2942b4b",
+  "source_commit_short": "d67043d",
   "artifacts": [
     {
       "path": "bin/autorig_cli-linux-x86_64",
