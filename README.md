@@ -16,7 +16,7 @@ Source code and developer documentation live in:
 | Path | Description |
 |------|-------------|
 | `bin/autorig_cli-linux-x86_64` | Linux (x86_64) CLI binary (runs locally, no Python install required). |
-| `bin/setup.sh` | Helper to start the local API server and (optionally) open the EXPERIMENTAL drawing UI. |
+| `bin/setup.sh` | Helper to auto-detect/reuse or start the local API server (and optionally open the EXPERIMENTAL drawing UI). |
 | `plugins/autorig_blender-0.2.1.zip` | Blender add-on zip (install in Blender Preferences). |
 | `proposal/autorig_enterprise_proposal.pdf` | Proposal / deck PDF. |
 | `BUILD_INFO.json` | Build provenance (source commit + artifact hashes). |
@@ -34,6 +34,12 @@ sha256sum -c SHA256SUMS
 ```bash
 bash ./bin/setup.sh --host 127.0.0.1 --port 8000
 ```
+
+`setup.sh` behavior:
+
+- Reuses an existing healthy AutoRig API if already running on the requested port.
+- Falls back to the next available port if requested port is occupied.
+- Supports startup wait tuning via `--wait-seconds`.
 
 Then open:
 

@@ -24,6 +24,14 @@ chmod +x ./bin/autorig_cli-linux-x86_64
 bash ./bin/setup.sh --host 127.0.0.1 --port 8000
 ```
 
+If startup is slow on your machine/network, increase wait timeout:
+
+```bash
+bash ./bin/setup.sh --host 127.0.0.1 --port 8000 --wait-seconds 60
+```
+
+`setup.sh` automatically reuses a healthy running API or picks a fallback port if needed.
+
 Then open:
 
 - Swagger UI: `http://127.0.0.1:8000/docs`
